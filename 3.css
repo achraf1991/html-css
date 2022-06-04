@@ -1,0 +1,287 @@
+@import url("3.css");
+
+* {
+  padding: 00;
+  margin: 00;
+  text-decoration: none;
+  list-style: square;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+
+  font-family: "roboto";
+
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(47, 3, 7, 0.826);
+}
+/*
+.BG {
+  text-align: center;
+
+  background: url(bg1.jpeg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 0vh;
+  height: 0vh;
+}
+*/
+nav {
+  background-position: right;
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  align-items: stretch;
+  display: table-footer-group;
+}
+
+label.logo {
+  font-family: "Poppins";
+  color: rgb(0, 0, 0);
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: 500;
+}
+
+label.logo:hover {
+  color: #5313de;
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 100px;
+  margin: 5px;
+}
+
+nav ul li a {
+  font-family: "Poppins";
+  font-size: 17px;
+  font-weight: 500;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+}
+
+a.active,
+a:hover {
+  color: #0e28ed;
+  transition: 0.5s;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: rgb(93, 22, 216);
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 0px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+}
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+  /*
+  ul {
+    position: fixed;
+    width: 0%;
+    height: 0vh;
+    background: #4712e8c9;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  } */
+
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+    font-size: 16px;
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+
+.card {
+  width: 70%;
+  padding: 30px 90px 90px 90px;
+  border: 6px solid rgba(20, 5, 107, 0.3);
+  box-shadow: 10px 20px 0 rgba(10, 5, 23, 0.3);
+  border-radius: 50px;
+  position: relative;
+}
+
+.card h2 {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.card .row {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid: auto / auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  grid-gap: 30px;
+}
+
+.card .row .col {
+  position: relative;
+  width: 100%;
+  margin: 30px 20px 40px 0;
+  transition: 0.5s;
+}
+
+.card .row .form-group {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #eeeaf4;
+}
+
+.card .row .form-group input,
+.card .row .form-group textarea {
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  background: transparent;
+  outline: none;
+  font-size: 24px;
+  padding: 10px 0 10px 20px;
+  border: 5px solid rgba(241, 231, 231, 0.3);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.3);
+  color: #e5e4e7;
+  border-radius: 50px;
+}
+
+.card .row .form-group label {
+  line-height: 40px;
+  color: #eeebf3;
+  font-size: 24px;
+  margin: 0 0 0 30px;
+  display: block;
+  pointer-events: none;
+}
+
+.row .col:nth-child(6) {
+  margin-top: 64px;
+}
+
+.card .row .form-group input:focus,
+.card .row .form-group textarea:focus {
+  border: 5px solid #e0e0e1;
+  transition: all 0.5s;
+}
+
+.card .row input[type="submit"] {
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 10px 0 rgba(240, 238, 238, 0.3);
+  padding: 10px;
+  height: 100%;
+  width: 50%;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  text-transform: uppercase;
+  color: #550bbc;
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 45px;
+  transition: all 0.4s;
+}
+
+.card .row input[type="submit"]:hover {
+  border: 5px solid rgba(255, 255, 255, 1);
+  color: #eeeaf4;
+  transition: all 0.4s;
+}
+
+@media screen and (max-width: 500px) {
+  .card .row {
+    grid-template-columns: repeat(auto-fit, minmax(70%, 1fr));
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .card h2 {
+    font-size: 34px;
+  }
+
+  .card .row input[type="submit"] {
+    width: 100%;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(11, 4, 20);
+  color: white;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  color: #3418ea;
+  background-color: rgb(229, 239, 239);
+}
+
+p {
+  padding: 10px;
+  margin: 30px;
+  font-size: x-large;
+  color: beige;
+}
+
+img {
+  width: 1300px;
+  height: 600px;
+  object-fit: contain;
+}
+
+.card {
+  width: 1300px;
+  height: 600px;
+}
+
+ul {
+  list-style-type: square;
+  color: beige;
+}
+
+li {
+  margin: 40px;
+}
